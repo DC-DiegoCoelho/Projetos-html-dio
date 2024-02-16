@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página-Gotham</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    ul { list-style: none; padding-left: 5px; }
+    a { color:blue; text-decoration: none;}
+    .bar {
+        background-color: #f9f9fb;
+        padding:15px;
+        border-top: solid 1px #cdcdcd;
+        border-bottom: solid 1px #cdcdcd;
+    }
+    .content {
+        max-width: 1440px;
+        margin: auto;
+        grid-gap: 3rem;
+        display: grid;
+        gap: 3rem;
+        grid-template-areas: "sidebar main anchors";
+        grid-template-columns: minmax(0,15rem) minmax(0,2.5fr) minmax(0,15rem);
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .footer {
+        min-height: 100px;
+        border-top: solid 1px #cdcdcd;
+    }
+    .anchors {
+        border-left: solid 1px #cdcdcd;
+        padding-left: 15px;
+    }
+    .sidebar {
+        border-right: solid 1px #cdcdcd;
+    }
+    figure {
+        text-align: center;
+    }
+</style>
+
+</head>
+<body>
+
+    <div>   
+        <div class="logo">
+            <img src="data:image/jpeg;base64,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" width="200" alt="Logotipo do site recriando wikipédia"/>
+        </div>
+    </div>
+
+    <div class="bar"></div>
+
+    <div class="content">
+        <div class="sidebar">
+            <h2>Séries de Tv</h2>
+                <nav>
+                <ul>
+                    <li><a href="PaginaPrincipal.html">Game Of Throne</a></li>
+                    <br>
+                    <li><a href="TheChosen.html">The Chosen</a></li>
+                    <br>
+                    <li><a href="Lupin.html">Lupin</a></li>     
+                </ul>
+            </nav>   
+        </div>
+
+        <div class="main">
+            <h1 id="inicio">Um pouco sobre a série Gotham</h1>
+            <p>Gotham é uma série de televisão americana criada por Bruno Heller, baseada em personagens que aparecem em publicações da DC Comics em sua franquia Batman, principalmente o Detetive James Gordon e Bruce Wayne. A série é estrelada por Ben McKenzie como o jovem Gordon. Heller serve como produtor executivo da série, juntamente com Danny Cannon, que também dirigiu o piloto. Gotham foi anunciada em 5 de maio de 2014, e estreou em 22 de setembro de 2014 na Fox Broadcasting Company (FOX).[2] Em 13 de maio de 2018, a Fox renovou a série para uma quinta e última temporada.</p>
+                <figure>
+                    <img src="Acess/Gotham-Poster800px.webp" alt="Imagem com o logo da série sendo destacado com os personagens principais">
+                    <figcaption>Logotipo da série com os personagens principais</figcaption>
+                </figure>
+                
+                <p>Como originalmente concebida, a série teria servido como uma história simples sobre os primeiros dias de Gordon na polícia de Gotham City. A ideia evoluiu, não só para incluir o personagem Bruce Wayne, mas também para contar as histórias de origem de vários vilões do Batman, incluindo Coringa (Joker), Pinguim, Mulher-Gato, Charada, Duas-Caras, Hera Venenosa, Senhor Frio, Espantalho, Ra's al Ghul, Chapeleiro Louco e Hugo Strange. A primeira temporada teria originalmente 16 episódios, que depois foi estendido para um total de 22.</p>    
+            <br>
+                <p>No Brasil, a série foi exibida em primeira mão pelo canal de TV fechada Warner Channel, estreando em 29 de setembro de 2014. Ainda no Brasil, a série foi ao ar na Globo, a partir do dia 3 de agosto de 2015, logo após o Programa do Jô. Em Portugal, Gotham foi exibida desde o dia 11 de novembro de 2014 pela FOX Portugal, mas em 2015 a série também foi para canal irmão da FOX Portugal, o FOX Crime.
+
+                    No mundo dos streamings, no Brasil, Gotham foi durante muito tempo atração da Netflix, onde sempre entregou bons números de audiência. A série foi removida da plataforma em 12 de maio de 2023.
+                    
+                    Semanas depois, em 7 de junho, todas as temporadas de Gotham entraram na HBO Max; disponibilidade exclusiva.</p>
+            
+            <h2 id="Produção">Produção</h2>
+                <small><a href="#inicio"(Voltar)>(Voltar)</a></small>
+            <h3 id="Desenvolvimento">Desenvolvimento</h3>
+                
+                 <p>O produtor Bruno Heller teve a ideia da série após uma conversa com Geoff Johns, diretor criativo da DC Entertainment. Inicialmente Heller disse que ele estava hesitante em fazer uma série sobre super-heróis, dizendo ao site Digital Spy que "Eu realmente não sei como escrever sobre pessoas com super poderes". Além disso, elaborando com a Entertainment Weekly disse que "eu não acho que Batman funciona muito bem na TV ", acrescentando que "francamente, todas essas histórias de super-heróis que eu vi, eu sempre amei até que eles entram no traje ", notando que nesse ponto "eles pararam tornando-se seres humanos." O filho de Heller, sugeriu que o foco da série poderia ser sobre Comissário Gordon a partir do qual Heller, em seguida, desenvolveu a ideia de Gordon sendo o investigador que investigou os pais de Bruce Wayne assassinados uma ideia que ele diz que "nos demos um ponto de partida que permitiu-nos contar a saga de um ponto muito mais cedo do que antes''.
+
+                Em 24 de setembro de 2013, a Fox Broadcasting Company (FOX) anunciou a série de TV Gotham, a ser produzida pela Warner Bros. Television e escrita por Bruno Heller.[52] Em 7 de janeiro de 2014, Danny Cannon foi contratado para dirigir o episódio piloto. Falando sobre o projeto durante uma coletiva de imprensa na Television Critics Association, o presidente da Fox Kevin Reilly, disse que Gotham "não é apenas uma série adjunta" e "trata-se de uma franquia do Batman, apenas voltando na cronologia". Ele também acrescentou que a série funciona por conta própria, separada de qualquer universo compartilhado da DC na TV ou no cinema.
+                        
+                O piloto foi exibido no painel da Warner Bros. Television e DC Entertainment, na San Diego Comic-Con International, em junho de 2014, junto com o piloto de The Flash, e trailers de Constantine e da terceira temporada de Arrow. Em julho de 2014, foi anunciado que Graeme Revell seria o compositor da série.
+                </p>
+            <br>        
+            <h2 id="Elenco">Escolha de elenco</h2> 
+                <small><a href="#inicio"(Voltar)>(Voltar)</a></small>
+            <br>    
+                <p>Em janeiro de 2014, surgiram rumores de que Donal Logue iria interpretar James Gordon na série. Logue negou esses rumores via Twitter. O ator acabou sendo escalado como Harvey Bullock. Em fevereiro de 2014, Ben McKenzie foi escalado como James Gordon. McKenzie filmou um piloto prévio com Heller para CBS, que levou a Heller escrever su caracterização de Gordon com McKenzie em mente. Escalar Bruce Wayne foi desafiador em parte, porque, como Heller colocou "É um elenco tão importante e teria sido muito perigoso colocar a pessoa errada", acrescentando que o processo de elenco para Wayne "exigia muita negociação, muitas idas e vindas, para que todos ficassem felizes e confortáveis." No início de março de 2014, David Mazouz foi escalado como Bruce Wayne enquanto Camren Bicondova foi escalada como Selina Kyle. Na Chicago Comic & Entertainment Expo de 2014, Jim Cunningham, da DC, disse que Renee Montoya seria uma personagem da série.</p>
+            <br>
+                <h2 id="Temporada">1ª Temporada</h2>
+            <small><a href="#inicio"(Voltar)>(Voltar)</a></small> 
+                <p>Na primeira temporada, James Gordon, um novo recruta do Departamento de Polícia de Gotham City, está emparelhado com o veterano detetive Harvey Bullock para solucionar os assassinatos de Thomas e Martha Wayne. Gordon conhece o filho dos Wayne, Bruce, que agora está aos cuidados do mordomo Alfred Pennyworth. Além disso, ele também encontra o membro de gangue Oswald Cobblepot, o inteligente Edward Nygma, o perturbado circense Jerome Valeska, as órfãs de rua Selina Kyle e Pamela "Ivy" Pepper, o promotor público assistente Harvey Dent e a médica Leslie Thompkins. Gordon se envolve com as famílias criminosas de Gotham, incluindo a gangster Fish Mooney e os senhores do crime Carmine Falcone e Salvatore Maroni.</p>
+            <br>
+                <h3 id="Trailer">Trailer da 1° Temporada</h3>
+                        <small><a href="#inicio"(Voltar)>(Voltar)</a></small>
+            <br>
+            <br>
+            <hr>
+            <iframe width="860" height="415" src="https://www.youtube.com/embed/flYe6T8q_t8?si=p3helshtcyVPpwQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <hr>    
+            <br>
+            <br>    
+        </div>
+
+        <div class="anchors">
+            <h2>Neste Artigo</h2>
+                <nav>
+                <ul>
+                    <li><a href="#Produção">Produção</a></li>
+                    <br>
+                    <li><a href="#Elenco">Escolha do Elenco</a></li>
+                    <br>
+                    <li><a href="#Temporada">1° Temporada (2013)</a></li>
+                    <br>
+                    <li><a href="#Trailer">Trailer</a></li>
+                </ul>
+            </nav>    
+        </div>
+    </div>
+
+    <div class="footer">
+
+    </div>
+</body>
+</html>
